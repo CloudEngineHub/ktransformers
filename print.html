@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-b4d4a2ba.js";
+            window.path_to_searchindex_js = "searchindex-40c64113.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-1efa58c4.js"></script>
@@ -190,13 +190,16 @@
   
 <h3>A Flexible Framework for Experiencing Cutting-edge LLM Inference/Fine-tune Optimizations</h3>
 
-  <strong><a href="#-overview">🎯 Overview</a> | <a href="#-kt-kernel---high-performance-inference-kernels">🚀 kt-kernel</a> | <a href="#-kt-sft---fine-tuning-framework">🎓 kt-sft</a> | <a href="#-citation">🔥 Citation</a> | <a href="https://github.com/kvcache-ai/ktransformers/issues/1582">🚀 Roadmap(2025Q4)</a>  </strong>
+  <strong><a href="#-overview">🎯 Overview</a> | <a href="#-inference---high-performance-kt-kernel-serving">🚀 Inference</a> | <a href="#-sft---fine-tuning-with-llama-factory">🎓 SFT</a> | <a href="#-citation">🔥 Citation</a> | <a href="https://github.com/kvcache-ai/ktransformers/issues/1921">🚀 Roadmap(2026Q2)</a>  </strong>
 </div>
 
 <h2 id="-overview"><a class="header" href="#-overview">🎯 Overview</a></h2>
-<p>KTransformers is a research project focused on efficient inference and fine-tuning of large language models through CPU-GPU heterogeneous computing. The project has evolved into <strong>two core modules</strong>: <a href="https://github.com/kvcache-ai/ktransformers/tree/main/kt-kernel/">kt-kernel</a> and <a href="https://github.com/kvcache-ai/ktransformers/tree/main/kt-sft">kt-sft</a>.</p>
+<p>KTransformers is a research project focused on efficient inference and fine-tuning of large language models through CPU-GPU heterogeneous computing. The project now exposes two user-facing capabilities from the kt-kernel source tree: <a href="kt-kernel/README.html">Inference</a> and <a href="doc/en/SFT/KTransformers-Fine-Tuning_Quick-Start.html">SFT</a>.</p>
 <h2 id="-updates"><a class="header" href="#-updates">🔥 Updates</a></h2>
 <ul>
+<li><strong>May 6, 2026</strong>: KTransformers at <a href="https://paris2026.gosim.org/zh/schedule/">GOSIM Paris 2026</a> — “Agentic AI on Edge” track. We’ll present KT’s inference performance on consumer hardware.</li>
+<li><strong>May 02, 2026</strong>: DeepSeek-V4-Flash Support! (<a href="doc/en/DeepSeek-V4-Flash.html">Tutorial</a>)</li>
+<li><strong>Apr 30, 2026</strong>: KTransformers v0.6.1 refreshes kt-kernel inference and SFT docs with separate <a href="kt-kernel/README.html">Inference</a> and <a href="doc/en/SFT/KTransformers-Fine-Tuning_Quick-Start.html">SFT Quick Start</a> entry points.</li>
 <li><strong>Mar 26, 2026</strong>: Support AVX2-only CPU backend for KT-Kernel inference. (<a href="doc/en/kt-kernel/AVX2-Tutorial.html">Tutorial</a>)</li>
 <li><strong>Feb 13, 2026</strong>: MiniMax-M2.5 Day0 Support! (<a href="doc/en/MiniMax-M2.5.html">Tutorial</a>)</li>
 <li><strong>Feb 12, 2026</strong>: GLM-5 Day0 Support! (<a href="doc/en/kt-kernel/GLM-5-Tutorial.html">Tutorial</a>)</li>
@@ -206,7 +209,7 @@
 <li><strong>Dec 22, 2025</strong>: Support RL-DPO fine-tuning with LLaMA-Factory. (<a href="doc/en/SFT/DPO_tutorial.html">Tutorial</a>)</li>
 <li><strong>Dec 5, 2025</strong>: Support Native Kimi-K2-Thinking inference (<a href="doc/en/kt-kernel/Kimi-K2-Thinking-Native.html">Tutorial</a>)</li>
 <li><strong>Nov 6, 2025</strong>: Support Kimi-K2-Thinking inference (<a href="doc/en/Kimi-K2-Thinking.html">Tutorial</a>) and fine-tune (<a href="doc/en/SFT_Installation_Guide_KimiK2.html">Tutorial</a>)</li>
-<li><strong>Nov 4, 2025</strong>: KTransformers Fine-Tuning × LLaMA-Factory Integration. (<a href="doc/en/KTransformers-Fine-Tuning_User-Guide.html">Tutorial</a>)</li>
+<li><strong>Nov 4, 2025</strong>: KTransformers Fine-Tuning × LLaMA-Factory Integration. (<a href="doc/en/SFT/KTransformers-Fine-Tuning_User-Guide.html">Tutorial</a>)</li>
 <li><strong>Oct 27, 2025</strong>: Support Ascend NPU. (<a href="doc/zh/DeepseekR1_V3_tutorial_zh_for_Ascend_NPU.html">Tutorial</a>)</li>
 <li><strong>Oct 10, 2025</strong>: Integrating into SGLang. (<a href="https://github.com/sgl-project/sglang/issues/11425">Roadmap</a>, <a href="https://lmsys.org/blog/2025-10-22-KTransformers/">Blog</a>)</li>
 <li><strong>Sept 11, 2025</strong>: Support Qwen3-Next. (<a href="doc/en/Qwen3-Next.html">Tutorial</a>)</li>
@@ -230,8 +233,8 @@
 <li><strong>Aug 9, 2024</strong>: Support windows native.</li>
 </ul>
 <hr>
-<h2 id="-core-modules"><a class="header" href="#-core-modules">📦 Core Modules</a></h2>
-<h3 id="-kt-kernel---high-performance-inference-kernels"><a class="header" href="#-kt-kernel---high-performance-inference-kernels">🚀 <a href="kt-kernel">kt-kernel</a> - High-Performance Inference Kernels</a></h3>
+<h2 id="-capabilities"><a class="header" href="#-capabilities">📦 Capabilities</a></h2>
+<h3 id="-inference---high-performance-kt-kernel-serving"><a class="header" href="#-inference---high-performance-kt-kernel-serving">🚀 <a href="kt-kernel/README.html">Inference</a> - High-Performance kt-kernel Serving</a></h3>
 <p>CPU-optimized kernel operations for heterogeneous LLM inference.</p>
 <img width="1049" height="593" alt="image" src="https://github.com/user-attachments/assets/68f423da-3f55-4025-bdc9-9ceaa554f00b" />
 <p><strong>Key Features:</strong></p>
@@ -264,34 +267,40 @@ pip install .
 </div>
 <p>👉 <strong><a href="kt-kernel/README.html">Full Documentation →</a></strong></p>
 <hr>
-<h3 id="-kt-sft---fine-tuning-framework"><a class="header" href="#-kt-sft---fine-tuning-framework">🎓 <a href="kt-sft">kt-sft</a> - Fine-Tuning Framework</a></h3>
+<h3 id="-sft---fine-tuning-with-llama-factory"><a class="header" href="#-sft---fine-tuning-with-llama-factory">🎓 <a href="doc/en/SFT/KTransformers-Fine-Tuning_Quick-Start.html">SFT</a> - Fine-Tuning with LLaMA-Factory</a></h3>
 <p>KTransformers × LLaMA-Factory integration for ultra-large MoE model fine-tuning.</p>
-<p><img src="https://raw.githubusercontent.com/kvcache-ai/ktransformers/main/doc/assets/image-20251011010558909.png" alt="image-20251011010558909"></p>
+<p><img src="https://raw.githubusercontent.com/kvcache-ai/ktransformers/main/doc/assets/image-20251011010558909.png" alt="KTransformers SFT"></p>
 <p><strong>Key Features:</strong></p>
 <ul>
-<li><strong>Resource Efficient</strong>: Fine-tune 671B DeepSeek-V3 with just <strong>70GB GPU memory</strong> + 1.3TB RAM</li>
-<li><strong>LoRA Support</strong>: Full LoRA fine-tuning with heterogeneous acceleration</li>
+<li><strong>Multi-Backend Support</strong>: CPU/GPU hybrid fine-tuning with INT8/INT4 quantization</li>
+<li><strong>Ultra-Large MoE Support</strong>: Fine-tune models like DeepSeek-V3/R1 on limited GPU memory</li>
+<li><strong>Faster than ZeRO-Offload</strong>: 6-12x training speedup in benchmarked MoE SFT workloads</li>
+<li><strong>Lower CPU Memory</strong>: About half the CPU memory of the previous KT SFT path in the benchmarked setup</li>
 <li><strong>LLaMA-Factory Integration</strong>: Seamless integration with popular fine-tuning framework</li>
-<li><strong>Production Ready</strong>: Chat, batch inference, and metrics evaluation</li>
 </ul>
-<p><strong>Performance Examples:</strong></p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Model</th><th>Configuration</th><th>Throughput</th><th>GPU Memory</th></tr>
+<tr><th>Model</th><th>GPU Memory</th><th>Training Speed</th><th>Hardware</th></tr>
 </thead>
 <tbody>
-<tr><td>DeepSeek-V3 (671B)</td><td>LoRA + AMX</td><td>~40 tokens/s</td><td>70GB (multi-GPU)</td></tr>
-<tr><td>DeepSeek-V2-Lite (14B)</td><td>LoRA + AMX</td><td>~530 tokens/s</td><td>6GB</td></tr>
+<tr><td>DeepSeek-V3</td><td>~80GB total</td><td>3.7 it/s</td><td>4x RTX 4090</td></tr>
+<tr><td>DeepSeek-R1</td><td>~80GB total</td><td>3.7 it/s</td><td>4x RTX 4090</td></tr>
+<tr><td>Qwen3-30B-A3B</td><td>~24GB total</td><td>8+ it/s</td><td>1x RTX 4090</td></tr>
 </tbody>
 </table>
 </div>
 <p><strong>Quick Start:</strong></p>
-<pre><code class="language-bash">cd kt-sft
-# Install environment following kt-sft/README.md
-USE_KT=1 llamafactory-cli train examples/train_lora/deepseek3_lora_sft_kt.yaml
+<pre><code class="language-bash">cd /path/to/LLaMA-Factory
+pip install -e .
+pip install -r requirements/ktransformers.txt
+CUDA_VISIBLE_DEVICES=0,1,2,3 accelerate launch \
+  --config_file examples/ktransformers/accelerate/fsdp2_kt_int8.yaml \
+  src/train.py \
+  examples/ktransformers/train_lora/qwen3_5moe_lora_sft_kt.yaml
 </code></pre>
-<p>👉 <strong><a href="kt-sft/README.html">Full Documentation →</a></strong></p>
+<p>👉 <strong><a href="doc/en/SFT/KTransformers-Fine-Tuning_Quick-Start.html">Quick Start →</a></strong>
+👉 <strong><a href="doc/en/SFT/KTransformers-Fine-Tuning_User-Guide.html">Full Documentation →</a></strong></p>
 <hr>
 <h2 id="-citation"><a class="header" href="#-citation">🔥 Citation</a></h2>
 <p>If you use KTransformers in your research, please cite our paper:</p>
@@ -317,7 +326,7 @@ USE_KT=1 llamafactory-cli train examples/train_lora/deepseek3_lora_sft_kt.yaml
 <li><strong>WeChat Group</strong>: See <a href="archive/WeChatGroup.png">archive/WeChatGroup.png</a></li>
 </ul>
 <h2 id="-kt-original-code"><a class="header" href="#-kt-original-code">📦 KT original Code</a></h2>
-<p>The original integrated KTransformers framework has been archived to the <a href="archive"><code>archive/</code></a> directory for reference. The project now focuses on the two core modules above for better modularity and maintainability.</p>
+<p>The original integrated KTransformers framework has been archived to the <a href="archive"><code>archive/</code></a> directory for reference. The project now organizes the two capabilities above from the kt-kernel source tree for clearer documentation and maintenance.</p>
 <p>For the original documentation with full quick-start guides and examples, see:</p>
 <ul>
 <li><a href="archive/README.html">archive/README.md</a> (English)</li>
@@ -408,7 +417,7 @@ USE_KT=1 llamafactory-cli train examples/train_lora/deepseek3_lora_sft_kt.yaml
 </ul>
 <h4 id="cuda-installation-gpu-acceleration"><a class="header" href="#cuda-installation-gpu-acceleration">CUDA Installation (GPU Acceleration)</a></h4>
 <p>For NVIDIA GPU-accelerated inference:</p>
-<pre><code class="language-bash">pip install kt-kernel-cuda
+<pre><code class="language-bash">pip install kt-kernel
 </code></pre>
 <p><strong>Features:</strong></p>
 <ul>
@@ -590,7 +599,7 @@ kt doctor
 ./install.sh
 
 # Option B: pip install
-pip install sglang-kt
+pip install kt-kernel sglang-kt
 
 # Option C: From source (editable mode)
 git clone --recursive https://github.com/kvcache-ai/ktransformers.git
@@ -793,7 +802,7 @@ huggingface-cli download Qwen/Qwen3-30B-A3B --local-dir /mnt/data/models/Qwen3-3
 <ul>
 <li><code>AMXINT4</code>: Best performance on AMX CPUs with INT4 quantized weights (May cause huge accuracy drop for some models, e.g., Qwen3-30B-A3B)</li>
 <li><code>AMXINT8</code>: Higher accuracy with INT8 quantized weights on AMX CPUs</li>
-<li><code>RAWINT4</code>: Native INT4 weights shared by CPU and GPU (currently supports Kimi-K2-Thinking model). See <a href="en/doc/en/Kimi-K2-Thinking-Native.html">Kimi-K2-Thinking Native Tutorial</a> for details.</li>
+<li><code>RAWINT4</code>: Native INT4 weights shared by CPU and GPU (currently supports Kimi-K2-Thinking model). See <a href="en/doc/en/kt-kernel/Kimi-K2-Thinking-Native.html">Kimi-K2-Thinking Native Tutorial</a> for details.</li>
 <li><code>FP8</code>, <code>FP8_PERCHANNEL</code>: FP8 weights shared by CPU and GPU</li>
 <li><code>BF16</code>: BF16 weights shared by CPU and GPU</li>
 <li><code>LLAMAFILE</code>: GGUF-based backend</li>
@@ -1162,24 +1171,24 @@ rm -rf build
 </ul>
 <h3 id="environment-setup"><a class="header" href="#environment-setup">Environment Setup</a></h3>
 <p>According to the following example, install both the <strong>KTransformers</strong> and <strong>LLaMA-Factory</strong> environments simultaneously.
-This time, to simplify the installation process of KTransformers, we have specially packaged a wheel file to avoid local compilation.
+This time, to simplify the installation process of KTransformers, use the PyPI packages to avoid local compilation.
 The detailed installation steps are as follows:
-(Note: Make sure your local <strong>Python version</strong>, <strong>Torch version</strong>, <strong>CUDA version</strong>, and the <strong>KTransformers wheel filename</strong> correspond correctly.)</p>
+(Note: Make sure your local <strong>Python version</strong>, <strong>Torch version</strong>, and <strong>CUDA version</strong> are compatible with the installed packages.)</p>
 <pre><code class="language-shell"># 1. Create a conda environment
-conda create -n Kllama python=3.12 # choose from : [3.10, 3.11, 3.12, 3.13]
+conda create -n Kllama python=3.12 # choose from : [3.11, 3.12, 3.13]
 conda install -y -c conda-forge libstdcxx-ng gcc_impl_linux-64
 conda install -y -c nvidia/label/cuda-11.8.0 cuda-runtime
 
 # 2. Install the LLaMA-Factory environment
 git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git
 cd LLaMA-Factory
-pip install -e ".[torch,metrics]" --no-build-isolation
+pip install -e .
 
-# 3. Install the KTransformers wheel that matches your Torch and Python versions, from https://github.com/kvcache-ai/ktransformers/releases/tag/v0.4.1 (Note: The CUDA version can differ from that in the wheel filename.)
-pip install ktransformers-0.4.1+cu128torch27fancy-cp312-cp312-linux_x86_64.whl
+# 3. Install the KTransformers SFT packages
+pip install "ktransformers[sft]"
 
 # 4. Install flash-attention, download the corresponding file based on your Python and Torch versions from: https://github.com/Dao-AILab/flash-attention/releases
-pip install flash_attn-2.8.3+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+pip install flash-attn --no-build-isolation
 # abi=True/False can find from below
 # import torch
 # print(torch._C._GLIBCXX_USE_CXX11_ABI)
@@ -1190,7 +1199,7 @@ pip install custom_flashinfer/
 </code></pre>
 <p><strong>Usage tip:</strong> In LLaMA-Factory YAML, set <code>use_kt: true</code> and pick a <code>kt_optimize_rule</code> file to have KTransformers handle the core compute. The features below show typical configs.</p>
 <h3 id="core-feature-1-use-ktransformers-backend-to-fine-tune-ultra-large-moe-models"><a class="header" href="#core-feature-1-use-ktransformers-backend-to-fine-tune-ultra-large-moe-models">Core Feature 1: Use KTransformers backend to fine-tune ultra-large MoE models</a></h3>
-<p>Run the command: <code>USE_KT=1 llamafactory-cli train examples/train_lora/deepseek3_lora_sft_kt.yaml</code>.</p>
+<p>Run the command: <code>USE_KT=1 ACCELERATE_USE_KT=true accelerate launch --config_file examples/ktransformers/accelerate/fsdp2_kt_bf16.yaml -m llamafactory.cli train examples/ktransformers/train_lora/deepseek_v3_lora_sft_kt.yaml</code>.</p>
 <p>Note: You <strong>must</strong> provide a <strong>BF16</strong> model. DeepSeek-V3-671B is released in FP8 by default; convert with <a href="https://github.com/deepseek-ai/DeepSeek-V3/blob/main/inference/fp8_cast_bf16.py">DeepSeek-V3/inference/fp8_cast_bf16.py</a>.</p>
 <pre><code class="language-yaml">### model
 model_name_or_path: opensourcerelease/DeepSeek-V3-bf16
@@ -1269,7 +1278,7 @@ chunk_size: 8192
 <p>Outputs go to <code>output_dir</code> in safetensors format plus adapter metadata for later loading.</p>
 <p><img src="assets/image-20251016171537997.png" alt="image-20251016171537997"></p>
 <h3 id="core-feature-2-chat-with-the-fine-tuned-model-base--lora-adapter"><a class="header" href="#core-feature-2-chat-with-the-fine-tuned-model-base--lora-adapter">Core Feature 2: Chat with the fine-tuned model (base + LoRA adapter)</a></h3>
-<p>Run the command: <code>llamafactory-cli chat examples/inference/deepseek3_lora_sft_kt.yaml</code>.</p>
+<p>Run the command: <code>llamafactory-cli chat examples/inference/qwen3_lora_sft.yaml</code>.</p>
 <p>Use the safetensors adapter trained with KT for inference.</p>
 <pre><code class="language-yaml">model_name_or_path: opensourcerelease/DeepSeek-V3-bf16
 adapter_name_or_path: saves/Kllama_deepseekV3
@@ -1286,7 +1295,7 @@ chunk_size: 8192
 <p>During loading, LLaMA-Factory maps layer names to KT’s naming. You’ll see logs like <code>Loaded adapter weight: XXX -&gt; XXX</code>:</p>
 <p><img src="assets/image-20251016171526210.png" alt="image-20251016171526210"></p>
 <h3 id="core-feature-3-batch-inference--metrics-base--lora-adapter"><a class="header" href="#core-feature-3-batch-inference--metrics-base--lora-adapter">Core Feature 3: Batch inference + metrics (base + LoRA adapter)</a></h3>
-<p>Run the command: <code>API_PORT=8000 llamafactory-cli api examples/inference/deepseek3_lora_sft_kt.yaml</code>.
+<p>Run the command: <code>API_PORT=8000 llamafactory-cli api examples/inference/qwen3_lora_sft.yaml</code>.
 Invoke the KT fine-tuned adapter to provide the API; the usage logic of other APIs is consistent with the native LLaMA-Factory approach.</p>
 <pre><code class="language-yaml">model_name_or_path: opensourcerelease/DeepSeek-V3-bf16
 adapter_name_or_path: saves/Kllama_deepseekV3
@@ -1321,7 +1330,14 @@ chunk_size: 8192
 <p>By integrating <strong>KTransformers LoRA fine-tuning</strong> into <strong>LLaMA-Factory</strong>, we provide a practical guide for efficient training and deployment of MoE LLMs. KT brings cutting-edge optimizations (DeepSeek/Qwen/Kimi support with AMX-accelerated kernels), and LoRA enables customization under very low GPU memory. LLaMA-Factory offers a friendly, unified interface.</p>
 <p>This integration (akin to Unsloth-style speedups) means even models with tens to hundreds of billions of parameters can be fine-tuned and deployed with low latency on commodity hardware. You get <strong>memory savings, speed-ups, and usability</strong> together. We encourage you to try LLaMA-Factory + KT for your next MoE project and follow this guide. Feedback is welcome!</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="kt-sft-docs"><a class="header" href="#kt-sft-docs">kt-sft Docs</a></h1>
+<h1 id="ktransformers-sft-docs"><a class="header" href="#ktransformers-sft-docs">KTransformers SFT Docs</a></h1>
+<ul>
+<li><a href="en/SFT/KTransformers-Fine-Tuning_Quick-Start.html">v0.6.1 Quick Start</a></li>
+<li><a href="#ktransformers-fine-tuning--llama-factory-integration--user-guide">Fine-Tuning User Guide</a></li>
+<li><a href="#ktransformers-fine-tuning--llama-factory-integration--developer-technical-notes">Developer Technical Notes</a></li>
+<li><a href="#dpo-training-with-llama-factory">DPO Tutorial</a></li>
+<li><a href="#tutorial-inject-operator-step-by-step">Injection Tutorial</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="tutorial-inject-operator-step-by-step"><a class="header" href="#tutorial-inject-operator-step-by-step">Tutorial: Inject Operator Step by Step</a></h1>
 <blockquote>
@@ -1995,6 +2011,7 @@ chunk_size: 8192
 <li><a href="#example-qwen3-30b-a3b-bf16">Example: Qwen3-30B-A3B (BF16)</a></li>
 <li><a href="#example-qwen35-35b-a3b-fp8-fp8">Example: Qwen3.5-35B-A3B-FP8 (FP8)</a></li>
 <li><a href="#example-qwen3-30b-a3b-gptq-int4-gptq_int4">Example: Qwen3-30B-A3B-GPTQ-Int4 (GPTQ_INT4)</a></li>
+<li><a href="#example-kimi-k25-rawint4">Example: Kimi-K2.5 (RAWINT4)</a></li>
 <li><a href="#sending-requests">Sending Requests</a></li>
 </ul>
 </li>
@@ -2011,6 +2028,7 @@ chunk_size: 8192
 <tr><td><code>BF16</code></td><td>BF16 native precision</td><td>Zero precision loss, uses BF16 weights directly</td></tr>
 <tr><td><code>FP8</code></td><td>FP8 block quantization</td><td></td></tr>
 <tr><td><code>GPTQ_INT4</code></td><td>INT4 GPTQ</td><td></td></tr>
+<tr><td><code>RAWINT4</code></td><td>Raw INT4 with BF16 scales</td><td>Used by Kimi-K2.5; weights stored in compressed SafeTensor format</td></tr>
 </tbody>
 </table>
 </div>
@@ -2031,7 +2049,8 @@ git submodule update --init --recursive
 ./install.sh
 </code></pre>
 <p>On AVX512 or AMX machines, you can also manually force AVX2 compilation:</p>
-<pre><code class="language-bash">export CPUINFER_CPU_INSTRUCT=AVX2
+<pre><code class="language-bash">export KT_RAWINT4_BACKEND=avx2
+export CPUINFER_CPU_INSTRUCT=AVX2
 export CPUINFER_ENABLE_AMX=OFF
 ./install.sh kt-kernel --manual
 </code></pre>
@@ -2047,7 +2066,7 @@ python -c "import kt_kernel; print(kt_kernel.__cpu_variant__)"
 kt doctor
 </code></pre>
 <h2 id="starting-the-inference-server"><a class="header" href="#starting-the-inference-server">Starting the Inference Server</a></h2>
-<p>Use <code>--kt-method BF16</code>, <code>FP8</code>, or <code>GPTQ_INT4</code>. KT-Kernel will <strong>automatically detect</strong> the CPU and fall back to the AVX2 backend when AVX512/AMX is unavailable.</p>
+<p>Use <code>--kt-method BF16</code>, <code>FP8</code>, <code>GPTQ_INT4</code>, or <code>RAWINT4</code>. KT-Kernel will <strong>automatically detect</strong> the CPU and fall back to the AVX2 backend when AVX512/AMX is unavailable.</p>
 <h3 id="example-qwen3-30b-a3b-bf16"><a class="header" href="#example-qwen3-30b-a3b-bf16">Example: Qwen3-30B-A3B (BF16)</a></h3>
 <pre><code class="language-bash"># Download the model
 huggingface-cli download Qwen/Qwen3-30B-A3B --local-dir /path/to/Qwen3-30B-A3B
@@ -2122,6 +2141,34 @@ python -m sglang.launch_server \
   --tensor-parallel-size 1 \
   --disable-shared-experts-fusion
 </code></pre>
+<h3 id="example-kimi-k25-rawint4"><a class="header" href="#example-kimi-k25-rawint4">Example: Kimi-K2.5 (RAWINT4)</a></h3>
+<blockquote>
+<p><strong>Note</strong>: The following command is optimized for 4x RTX PRO 6000 Blackwell (96GB each) + AMD Threadripper PRO 5995WX (64 cores, 1 NUMA node) + 256GB RAM.</p>
+</blockquote>
+<pre><code class="language-bash"># Download the model
+huggingface-cli download moonshotai/Kimi-K2.5 --local-dir /path/to/Kimi-K2.5
+
+# Start the server
+python -m sglang.launch_server \
+  --host 0.0.0.0 --port 30000 \
+  --model /path/to/Kimi-K2.5 \
+  --kt-weight-path /path/to/Kimi-K2.5 \
+  --kt-cpuinfer 64 \
+  --kt-threadpool-count 1 \
+  --kt-num-gpu-experts 228 \
+  --kt-enable-dynamic-expert-update \
+  --kt-method RAWINT4 \
+  --attention-backend flashinfer \
+  --trust-remote-code \
+  --mem-fraction-static 0.95 \
+  --chunked-prefill-size 8192 \
+  --max-running-requests 4 \
+  --context-length 262144 \
+  --enable-mixed-chunk \
+  --tensor-parallel-size 4 \
+  --enable-p2p-check \
+  --disable-shared-experts-fusion
+</code></pre>
 <h3 id="sending-requests"><a class="header" href="#sending-requests">Sending Requests</a></h3>
 <pre><code class="language-bash"># Interactive chat
 kt chat
@@ -2159,6 +2206,7 @@ curl http://localhost:30000/v1/chat/completions \
 <li><a href="#示例qwen3-30b-a3b-bf16">示例：Qwen3-30B-A3B (BF16)</a></li>
 <li><a href="#示例qwen35-35b-a3b-fp8-fp8">示例：Qwen3.5-35B-A3B-FP8 (FP8)</a></li>
 <li><a href="#示例qwen3-30b-a3b-gptq-int4-gptq_int4">示例：Qwen3-30B-A3B-GPTQ-Int4 (GPTQ_INT4)</a></li>
+<li><a href="#示例kimi-k25-rawint4">示例：Kimi-K2.5 (RAWINT4)</a></li>
 <li><a href="#发送请求">发送请求</a></li>
 </ul>
 </li>
@@ -2175,6 +2223,7 @@ curl http://localhost:30000/v1/chat/completions \
 <tr><td><code>BF16</code></td><td>BF16 原精度</td><td>零精度损失，直接使用 BF16 权重</td></tr>
 <tr><td><code>FP8</code></td><td>FP8 分块量化</td><td></td></tr>
 <tr><td><code>GPTQ_INT4</code></td><td>INT4 GPTQ</td><td></td></tr>
+<tr><td><code>RAWINT4</code></td><td>Raw INT4 + BF16 缩放因子</td><td>Kimi-K2.5 专用；权重以压缩 SafeTensor 格式存储</td></tr>
 </tbody>
 </table>
 </div>
@@ -2195,7 +2244,8 @@ git submodule update --init --recursive
 ./install.sh
 </code></pre>
 <p>在AVX512， AMX机器上， 也可以手动强制 AVX2 编译：</p>
-<pre><code class="language-bash">export CPUINFER_CPU_INSTRUCT=AVX2
+<pre><code class="language-bash">export KT_RAWINT4_BACKEND=avx2
+export CPUINFER_CPU_INSTRUCT=AVX2
 export CPUINFER_ENABLE_AMX=OFF
 ./install.sh kt-kernel --manual
 </code></pre>
@@ -2211,7 +2261,7 @@ python -c "import kt_kernel; print(kt_kernel.__cpu_variant__)"
 kt doctor
 </code></pre>
 <h2 id="启动推理服务"><a class="header" href="#启动推理服务">启动推理服务</a></h2>
-<p>使用 <code>--kt-method BF16</code>、<code>FP8</code> 或 <code>GPTQ_INT4</code>，KT-Kernel 会<strong>自动检测</strong> CPU 并在缺少 AVX512/AMX 时回退到 AVX2 后端。</p>
+<p>使用 <code>--kt-method BF16</code>、<code>FP8</code>、<code>GPTQ_INT4</code> 或 <code>RAWINT4</code>，KT-Kernel 会<strong>自动检测</strong> CPU 并在缺少 AVX512/AMX 时回退到 AVX2 后端。</p>
 <h3 id="示例qwen3-30b-a3b-bf16"><a class="header" href="#示例qwen3-30b-a3b-bf16">示例：Qwen3-30B-A3B (BF16)</a></h3>
 <pre><code class="language-bash"># 下载模型
 huggingface-cli download Qwen/Qwen3-30B-A3B --local-dir /path/to/Qwen3-30B-A3B
@@ -2284,6 +2334,34 @@ python -m sglang.launch_server \
   --max-total-tokens 32000 \
   --enable-mixed-chunk \
   --tensor-parallel-size 1 \
+  --disable-shared-experts-fusion
+</code></pre>
+<h3 id="示例kimi-k25-rawint4"><a class="header" href="#示例kimi-k25-rawint4">示例：Kimi-K2.5 (RAWINT4)</a></h3>
+<blockquote>
+<p><strong>说明</strong>：以下命令针对 4x RTX PRO 6000 Blackwell（各 96GB）+ AMD Threadripper PRO 5995WX（64 核，1 NUMA 节点）+ 256GB RAM 优化。</p>
+</blockquote>
+<pre><code class="language-bash"># 下载模型
+huggingface-cli download moonshotai/Kimi-K2.5 --local-dir /path/to/Kimi-K2.5
+
+# 启动服务
+python -m sglang.launch_server \
+  --host 0.0.0.0 --port 30000 \
+  --model /path/to/Kimi-K2.5 \
+  --kt-weight-path /path/to/Kimi-K2.5 \
+  --kt-cpuinfer 64 \
+  --kt-threadpool-count 1 \
+  --kt-num-gpu-experts 228 \
+  --kt-enable-dynamic-expert-update \
+  --kt-method RAWINT4 \
+  --attention-backend flashinfer \
+  --trust-remote-code \
+  --mem-fraction-static 0.95 \
+  --chunked-prefill-size 8192 \
+  --max-running-requests 4 \
+  --context-length 262144 \
+  --enable-mixed-chunk \
+  --tensor-parallel-size 4 \
+  --enable-p2p-check \
   --disable-shared-experts-fusion
 </code></pre>
 <h3 id="发送请求"><a class="header" href="#发送请求">发送请求</a></h3>
